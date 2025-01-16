@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safe System</title>
+    <link rel="stylesheet" href="styles4.css">
+</head>
+<body class="body">
+    <div class="container">
+        <div class="header">
+            <img src="images/team ;pgp.jpg" alt="Logo" class="logo">
+            <h1 class="title">SAFE SYSTEM</h1>
+        </div>
+        
+        <div class="timer-section">
+            <span class="icon">⏲️</span>
+            <span class="timer-title">Set Time Range</span>
+            <input type="number" id="minute-input" class="time-input" placeholder="Minutes">
+            <input type="number" id="second-input" class="time-input" placeholder="Seconds">
+            <button id="start-timer" class="setup-button">Start Timer</button>
+            <div class="time-display" id="time-display">00:00</div>
+        </div>
+        
+        <div class="setup-section">
+            <button class="setup-button" id="pin-button"><span class="icon">🔒</span> PIN</button>
+            <button class="setup-button"><span class="icon">🔑</span> PASSWORD</button>
+            <button class="setup-button"><span class="icon">🔲</span> PATTERN</button>
+            <button class="setup-button"><span class="icon">👆</span> FINGERPRINT</button>
+            <button class="setup-button"><span class="icon">👁️</span> FACE ID</button>
+        </div>
+
+        <!-- Continue button -->
+        <button class="continue-button" id="continue-button" >Continue</button>
+    </div>
+
+    <!-- Modal for PIN input -->
+    <div id="pin-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Enter PIN</h2>
+            <input type="password" id="pin-input" maxlength="4" placeholder="Enter 4-digit PIN">
+            <button id="submit-pin">Submit</button>
+        </div>
+    </div>
+
+    <script src="script4.js"></script>
+</body>
+</html>
