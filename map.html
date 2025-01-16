@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Device Location on Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        #map {
+            height: 70vh;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .continue-btn, .toggle-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .continue-btn {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .toggle-btn {
+            background-color: #ccc;
+            color: black;
+        }
+
+        .toggle-btn.on {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div id="map"></div>
+
+<div class="controls">
+    <button class="toggle-btn">OFF</button>
+    <button class="continue-btn">CONTINUE</button>
+</div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+    if (navigator.geolocation) {
+        navigator.geolocation.watchPosition(showPosition, showError, {
+            enableHighAccuracy: true,
+            timeout: 5000,
+            maximumAge: 0
+        });
+    } else {
+        alert("Geolocation is not supported by this browser.");
+    }
+
+    function showPosition(position) {
+        var lat = position.coords.latitude;
+        var lon = position.coords.longitude;
+
+        var map = L.map('map').setView([lat, lon], 13);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        var marker = L.marker([lat, lon]).addTo(map)
+            .bindPopup("You are here!")
+            .openPopup();
+
+        navigator.geolocation.watchPosition((position) => {
+            var lat = position.coords.latitude;
+            var lon = position.coords.longitude;
+
+            marker.setLatLng([lat, lon])
+                .bindPopup("You are here!")
+                .openPopup();
+            
+            map.setView([lat, lon], map.getZoom());
+        }, showError, {
+            enableHighAccuracy: true
+        });
+    }
+
+    function showError(error) {
+        switch(error.code) {
+            case error.PERMISSION_DENIED:
+                alert("User denied the request for Geolocation.");
+                break;
+            case error.POSITION_UNAVAILABLE:
+                alert("Location information is unavailable.");
+                break;
+            case error.TIMEOUT:
+                alert("The request to get user location timed out.");
+                break;
+            case error.UNKNOWN_ERROR:
+                alert("An unknown error occurred.");
+                break;
+        }
+    }
+
+    // Handle Toggle Button
+    const toggleBtn = document.querySelector('.toggle-btn');
+    toggleBtn.addEventListener('click', () => {
+        toggleBtn.classList.toggle('on');
+        toggleBtn.textContent = toggleBtn.classList.contains('on') ? 'ON' : 'OFF';
+    });
+
+    // Handle Continue Button
+    const continueBtn = document.querySelector('.continue-btn');
+    continueBtn.addEventListener('click', () => {
+        window.location.href = 'disable.html'; // Redirect to the Disable page
+    });
+</script>
+
+</body>
+</html>
