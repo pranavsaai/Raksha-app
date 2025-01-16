@@ -1,0 +1,150 @@
+body {
+  background-color: #1d1b1b;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+  background-color: #fff;
+  color: #000;
+  border-radius: 20px;
+  padding: 30px;
+  width: 300px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.title {
+  font-size: 22px;
+  margin: 0;
+}
+
+.timer-section {
+  margin-bottom: 20px;
+}
+
+.timer-title {
+  font-size: 16px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.time-input {
+  width: 100px;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.setup-button {
+  background-color: #f56b6b;
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  width: 100%;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.setup-button .icon {
+  margin-right: 10px;
+}
+
+.setup-button:hover {
+  background-color: #e45555;
+}
+
+.continue-button {
+  background-color: #7557f4;
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 20px;
+  width: 100%;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.continue-button:hover {
+  background-color: #5a3bdc;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 300px;
+  text-align: center;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#pin-input {
+  width: 80%;
+  padding: 10px;
+  margin: 15px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+#submit-pin {
+  background-color: #f56b6b;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 20px;
+  width: 100%;
+  font-size: 16px;
+  cursor: pointer;
+}
