@@ -1,0 +1,125 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #2B251E; /* Dark background similar to the one in the image */
+}
+
+.container {
+  background-color: #fff;
+  width: 350px;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.header img {
+  width: 60px;
+  margin-bottom: 10px;
+}
+
+.header h1 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #2B2B2B;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.input-container {
+  margin-bottom: 20px;
+}
+
+.input-container label {
+  display: block;
+  font-weight: bold;
+  font-size: 14px;
+  color: #2B2B2B;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.pin-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  border: 2px solid #D3D3D3;
+  border-radius: 25px;
+  text-align: center;
+  background-color: #F0F0F0;
+  color: #6F6F6F;
+}
+
+.disable-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #FF4A4A; /* Red button similar to the one in the image */
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.disable-btn:hover {
+  background-color: #E04343; /* Slightly darker red on hover */
+}
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #2B251E; /* Dark background similar to the one in the image */
+}
+
+.container {
+  background-color: #fff;
+  width: 350px;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.header img {
+  width: 60px;
+  margin-bottom: 10px;
+}
+
+.header h1 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #2B2B2B;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 14px;
+  color: #333;
+
+}
